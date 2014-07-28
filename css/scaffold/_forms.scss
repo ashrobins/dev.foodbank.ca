@@ -1,0 +1,20 @@
+input[type="submit"] {
+  display: block;
+  clear: both;
+  width: 100%;
+  border: none;
+  background-color: palette(blue);
+
+  &:hover {
+    background-color: darken(palette(blue), 5);
+    cursor: pointer;}
+}
+
+.monthly-radio {
+  cursor: pointer;
+  background: lighten(palette(salmon), 5);
+
+  &:hover {
+    background: darken(palette(salmon), 5);
+  }
+}

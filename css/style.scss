@@ -1,0 +1,22 @@
+// $visual-grid: true;
+// $visual-grid-index: front;
+$visual-grid-color: #eee;
+$visual-grid-opacity: .4;
+
+
+@import 'bourbon/bourbon'; 
+$gutter: golden-ratio(1em, 2);
+@import 'neat/neat'; 
+@import 'scaffold/variables';
+@import 'scaffold/mixins';
+@import 'scaffold/reset';
+@import 'scaffold/layout';
+@import 'scaffold/modules';
+
+@import 'scaffold/oembed';
+@import 'scaffold/typography';
+@import 'scaffold/forms';
+
+@import 'scaffold/noodling';
+
+

@@ -1,0 +1,30 @@
+$_color-base-grey: rgb(229,231,234);
+
+$palettes: (
+    teal: (
+        base:   #b7e6da,
+        light:  lighten(#b7e6da, 10),
+        dark:   darken(#b7e6da, 40)
+    ),
+    grey: (
+        base:  $_color-base-grey,
+        light: lighten($_color-base-grey, 10%),
+        dark: darken($_color-base-grey, 10%)
+    ),
+    blue: (
+        base:  #18beff,
+        light: lighten(#18beff, 10%),
+        dark: darken(#18beff, 10%)
+    ),
+    salmon: (
+        base: #EE8888
+
+        )
+);
+
+// http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+
+@function palette($palette, $tone: 'base') {
+    @return map-get(map-get($palettes, $palette), $tone);
+}
+
