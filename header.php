@@ -15,6 +15,8 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <link rel='stylesheet' id='dteskitchen-style-css'  href='<?php echo get_template_directory_uri(); ?>/css/build/global.css' type='text/css' media='all' />
+<script type="text/javascript" src="//use.typekit.net/cbi6aga.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 </head>
 

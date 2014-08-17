@@ -1,0 +1,77 @@
+{
+    "key": "group_5395bd64806bb",
+    "title": "Cooking Info",
+    "fields": [
+        {
+            "key": "field_5395bd7db0ffb",
+            "label": "Prep Time",
+            "name": "prep_time",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "formatting": "html",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5395bd87b0ffc",
+            "label": "Cook Time",
+            "name": "cook_time",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "formatting": "html",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5395bd8fb0ffd",
+            "label": "Ready In",
+            "name": "ready_in",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "formatting": "html",
+            "readonly": 0,
+            "disabled": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "recipe"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ]
+}

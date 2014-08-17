@@ -15,14 +15,14 @@
 		<div class="recipe-info">
 		<h3>Basic Facts</h3>
 		<ul>
-			<li>Serving Size: <?php the_field('default_serving_size'); ?>
+			<li>Serving Size: <?php the_field('default_serving_size'); ?></li>
 			<li>Prep time: <?php the_field('prep_time'); ?></li>
 			<li>Cook time: <?php the_field('cook-time'); ?></li>
 			<li>Ready in: <?php the_field('ready_in'); ?></li>
 		</ul>
 	</div>
 		<div class="recipe-intro">
-		<?php the_content(); ?>
+		<?php the_field('recipe_short_description'); ?>
 
 		<span class="recipe-author">
 			<p><?php the_field('contributor_acknowledgement'); ?></p>
@@ -30,11 +30,24 @@
 		</div>
 
 
-		<div class="ingredients-list">
+		<div class="ingredients-list" id="small-ingredients">
 			<h2>Ingredients</h2>
 
-			<?php listIngredients() ?>
+			<?php listSmallIngredients() ?>
 		</div>
+    
+    <div class="ingredients-list" id="medium-ingredients">
+      <h2>Ingredients</h2>
+
+      <?php listMediumIngredients() ?>
+    </div>
+    
+
+    <div class="ingredients-list" id="large-ingredients">
+      <h2>Ingredients</h2>
+
+      <?php listLargeIngredients() ?>
+    </div>
 
 		<div class="the-steps">
 						<h2>Directions</h2>

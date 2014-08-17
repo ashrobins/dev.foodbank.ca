@@ -2,7 +2,7 @@
 /**
  * Custom functions that act independently of the theme templates
  *
- * Eventually, some of the functionality here could be replaced by core features
+ *
  *
  * @package dteskitchen
  */
@@ -10,7 +10,7 @@
 function relatedIngredients() {
 
 }
-
+// Delete this. No longer relevant
 function listIngredients() {
 	if( have_rows('ingredients') ):
  	?><div class="ingredient-list"><?php
@@ -25,6 +25,25 @@ else :
     // no rows found
 
 endif;
+}
+
+function listSmallIngredients(){
+  ?>
+  <div class="ingredient-list">
+  <?php the_field('small_ingredients_list'); ?>
+  </div>
+<?}
+
+function listMediumIngredients(){
+  ?><div class="ingredient-list">
+  <?php the_field('medium_ingredients_list'); ?>
+  </div><?
+}
+
+function listLargeIngredients(){
+  ?><div class="ingredient-list">
+  <?php the_field('large_ingredients_list'); ?>
+  </div><?
 }
 
 

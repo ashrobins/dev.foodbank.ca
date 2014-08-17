@@ -12,13 +12,8 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'dteskitchen' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-	<?php edit_post_link( __( 'Edit', 'dteskitchen' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
+		<?php the_field('recipe_short_description'); ?>
+	</div>
+	<footer><?php if has_field('ready_in') { ?>Ready in: <?php the_field('ready_in'); ?><?php } ?></footer>
+	
 </article><!-- #post-## -->

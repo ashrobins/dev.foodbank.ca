@@ -28,3 +28,5 @@ $palettes: (
     @return map-get(map-get($palettes, $palette), $tone);
 }
 
+$sansserif: "brandon-grotesque",sans-serif;
+$serif: "rooney-web",sans-serif;
