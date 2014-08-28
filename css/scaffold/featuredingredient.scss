@@ -1,0 +1,48 @@
+h2.weekly-ingredient-heading {
+background: #7ABCD2;
+padding: .5em;
+border-radius: 5px;
+font-size: 1rem;
+text-align: center;
+text-transform: uppercase;
+font-family: $sansserif;
+font-weight: 300;
+color: white;
+}
+
+
+.weekly-ingredient-footer {
+  background: #7ABCD2;
+  border-radius: 5px;
+  margin-right: .5em;
+}
+
+.weekly-ingredient {
+  background: #7ABCD2;
+
+
+}
+
+
+.weekly-ingredient-footer {
+background: rgba(255,94,66,.2);
+padding: 1rem;
+}
+
+.weekly-ingredient-footer li {
+  margin-right: .5em;
+  list-style-type: none;
+  border-bottom: none;
+  font-size: 1rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+
+
+  a {
+    border-bottom: 3px solid #fff;
+    transition: all .2s ease;
+    &:hover {background: rgba(254,254,254,.2);
+
+    }
+  }
+}

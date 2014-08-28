@@ -1,0 +1,172 @@
+%linedlist {
+  list-style-type: none;
+  border-bottom: 1px solid white;
+  padding-bottom: rem(5.5);
+  margin-bottom: rem(5.5);
+
+}
+ul.recipe-serving-size-selection li {
+display: inline-block;
+margin-bottom: 0;
+
+}
+.single-recipe .site-content {
+  // padding-top: 5rem;
+}
+
+.single-recipe {
+  .recipe-title {
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid palette(accent);
+    border: none;
+    @include media(769px){
+      padding-top: 3rem;
+      font-size: 3rem;
+      
+    }
+  }
+  h3 {
+    border-bottom: 3px solid palette(accent);
+  }
+}
+
+.recipe-serving-size h3 {
+  border: none;
+}
+
+
+.recipe-serving-size {
+  margin-bottom: 0px;
+  background: rgba(148, 168, 180, 0.2);
+  padding-top: .3rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  margin-bottom:.75rem;
+  margin-top:1.5rem;
+}
+.recipe-serving-size h3, .recipe-serving-size ul {
+  display: inline-block;
+}
+
+.ingredient-list ul li {
+ @extend %linedlist;
+ 
+}
+
+.ingredient-list li:first-child {
+  border-top: 1px solid white;
+}
+.ingredient-list li:last-child{
+  padding-bottom: 0;
+  margin-bottom:0;
+}
+
+.recipe-info ul li {
+  @extend %linedlist;
+
+}
+
+.ingredient-list ul {
+  padding-top: rem(5.5);
+  background: rgba($slategrey, .2);
+  padding: .25rem .5rem;
+}
+
+#recipe-ingredients-list {
+  margin-bottom: 1.5rem;
+}
+
+.recipe-categories {
+  @include clearfix;
+}
+
+.recipe-categories a {
+  @extend %bluebox;
+  background: lighten($elblue, 10);
+
+  padding: .25rem;
+  border-radius: 0;
+  margin-bottom: .5rem;
+  line-height: 1.8; 
+  margin-right: .3rem;
+
+  &:hover {
+    background: $elblue;
+  }
+}
+// Clean this up - getting rid of main title properties
+
+.single-recipe h4.recipe-title {
+  padding-top:0px;
+
+}
+
+.ingredient-toggle {
+  border-bottom: 3px solid $elblue;
+  padding: 0 .3rem;
+  transition: all .2s ease;
+}
+
+.ingredient-toggle:hover {
+  background: rgba($elblue, .6);
+}
+
+.ingredient-toggle.active {
+  background: rgba($elblue, .6);
+}
+
+.related-recipes {
+  background: $slategrey;
+  padding: .5rem $gutter;
+  margin-top: 2rem;
+
+  h2 {
+    font-size: .75rem;
+    color: white;
+    font-family: $sansserif;
+    text-transform: uppercase;
+
+    a {
+      color: white;
+      // border-bottom: 3px solid white;
+      transition: all .3s ease;
+
+      &:hover {
+        background: rgba(254,254,254,.2);
+        
+      }
+    }
+  }
+}
+
+.recipe-tip {
+  background: rgba($slategrey, .2);
+  padding: .5rem;
+  border-radius:5px;
+}
+.related-recipes .recipe-title {
+  font-size: 1rem;
+  border:none;
+  
+  
+  a {
+    border-bottom: 3px solid white;
+    transition: all .3s ease;
+
+  &:hover {
+    background: rgba(254,254,254,.2);
+    
+  }
+}
+}
+
+.recipe-content {
+  padding-bottom: 2rem;
+}
+
+.the-steps h3 {
+  @include media(769px){
+  margin-bottom: calc(5px+1.5rem);
+
+  }
+}

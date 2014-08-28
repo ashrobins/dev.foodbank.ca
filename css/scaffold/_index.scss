@@ -1,0 +1,55 @@
+article.recipe-index {
+margin: 13px 0;
+}
+.recipe-list {
+  padding: 0 $gutter;
+  padding-bottom: 3.5rem;
+}
+.recipe-list-header {
+  text-transform: uppercase;
+  font-family: $sansserif;
+  @include font-size( modular-scale(16px, 1, $typography-ratio));
+  text-align: center;
+
+}
+.recipe-ready {
+  color: palette(grey, dark);
+  @include font-size( modular-scale(16px, -1, $typography-ratio));
+  &:before {
+    content: 'Ready in ';
+  }
+
+   
+}
+
+
+ .recipe-title {
+  @include font-size( modular-scale(16px,   1, $typography-ratio) );
+  border-bottom: 1px solid palette(accent);
+  font-weight: 100;
+  margin-bottom: 0;
+  &:after {
+    @include triangle(12px, gray, down);
+  }
+}
+
+.recipe-short-description {
+  padding-top: 0;
+}
+
+.recipe-list-alphabet {
+  color: lighten(grey, 22%);
+  
+
+}
+
+.weekly-ingredient {
+  padding: 0 $gutter;
+}
+
+.weekly-ingredient-footer h2 {
+  font-size: .75rem;
+  color: white;
+  font-family: $sansserif;
+  text-transform: uppercase;
+}
