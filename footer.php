@@ -8,13 +8,59 @@
  */
 ?>
 
-	</div><!-- #content -->
-
-
-</div><!-- #page -->
-
+	
 <?php wp_footer(); ?>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+<script>
+$(function() {
+  var panels = $('.ingredients-list'),
+      stored_tab = localStorage.getItem('active_tab'),
+      current_active_tab,
+      active_panel,
+      stored_tab;
+      
+      if (stored_tab){
+        current_active_tab = $(stored_tab);
+      }
+      else {
+        current_active_tab = $('#small-ingredient-toggle');
+      }
+     
+      active_panel = current_active_tab.attr('href');
+      panels.hide();
+      current_active_tab.toggleClass('active');
 
+      $(active_panel).show();
+
+      $('.ingredient-toggle').on('click', function(e){
+          e.preventDefault();
+          el = $(this);
+          
+          $(active_panel).hide();
+          panel = el.attr('href');
+          $(panel).fadeIn(); 
+          active_panel = panel;
+          current_active_tab.toggleClass('active');
+          el.toggleClass('active');
+          current_active_tab = el;
+
+          stored_tab = '#' + el.attr('id');
+
+          localStorage.setItem('active_tab', stored_tab);
+
+    
+     
+
+          
+    })
+
+      $()
+});
+
+
+
+</script>
 <script src="//localhost:35729/livereload.js"></script>
 
 </body>

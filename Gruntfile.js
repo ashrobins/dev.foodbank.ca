@@ -34,7 +34,8 @@ module.exports = function(grunt) {
         },
 
       css: {
-      files: ['*/*.scss'],
+      files: ['css/*.scss',
+              'css/*/*.scss'],
       tasks: ['sass'],
       options: {
           spawn: false,
@@ -47,7 +48,7 @@ module.exports = function(grunt) {
 sass: {
     dist: {
         options: {
-            style: 'compressed'
+            style: 'expanded'
         },
         files: {
             'css/build/global.css': 'css/style.scss'

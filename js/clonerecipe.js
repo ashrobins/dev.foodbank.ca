@@ -265,7 +265,7 @@ function roundToNearest(amount){
   }
 
   if (wholenumber == 0) {
-    quantity = "" + fraction;
+    quantity = "<span class='ingredient-fraction'>" + fraction + "</span>";
   }
   else {
     quantity = wholenumber.toString() + " <span class='ingredient-fraction'>" + fraction + "</span>";

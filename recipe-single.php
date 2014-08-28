@@ -5,9 +5,14 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?> <!-- <a href="javascript:window.print()" class="print-button"><img src="<?php echo get_template_directory_uri(); ?>/ing/print.png"></a> --></h1>
-	</header><!-- .entry-header -->
+	<header class="recipe-header">
+		<h1 class="recipe-title"><?php the_title(); ?></h1>
+	   <div class="recipe-intro">
+       <?php the_field('recipe_short_description'); ?>
+     </div>
+     
+
+  </header><!-- .entry-header -->
 
 
 
@@ -15,46 +20,74 @@
 		<div class="recipe-info">
 		<h3>Basic Facts</h3>
 		<ul>
-			<li>Serving Size: <?php the_field('default_serving_size'); ?></li>
 			<li>Prep time: <?php the_field('prep_time'); ?></li>
-			<li>Cook time: <?php the_field('cook-time'); ?></li>
-			<li>Ready in: <?php the_field('ready_in'); ?></li>
+			<li>Cook time: <?php the_field('cook_time'); ?></li>
+			<li>Ready in:  <?php the_field('ready_in'); ?></li>
 		</ul>
-	</div>
-		<div class="recipe-intro">
-		<?php the_field('recipe_short_description'); ?>
+    <div class="recipe-suggestions">
+    <?php the_field('recipe_suggestions'); ?>
+	 </div>
+   </div>
+   <div class="recipe-serving-size">
+   <h3>Serving Size:</h3>
+   <ul class="recipe-serving-size-selection">
 
-		<span class="recipe-author">
-			<p><?php the_field('contributor_acknowledgement'); ?></p>
-		</span>
-		</div>
+     <li><a href="#small-ingredients" id="small-ingredient-toggle" class="ingredient-toggle">Small</a></li>
+     <li><a href="#medium-ingredients" id="medium-ingredient-toggle"  class="ingredient-toggle">Medium</a></li>
+     <li><a href="#large-ingredients" id="large-ingredient-toggle" class="ingredient-toggle">Large</a></li>
+   </ul>
+   </div>  
+  <div id="recipe-ingredients-list">
+  <h3 class="recipe-ingredients-list-header">Ingredients</h3>
 
-
+	
 		<div class="ingredients-list" id="small-ingredients">
-			<h2>Ingredients</h2>
+      <header class="ingredients-list-header">
+			
+      <h4>Serves 15</h4>
+      </header>
 
 			<?php listSmallIngredients() ?>
 		</div>
     
     <div class="ingredients-list" id="medium-ingredients">
-      <h2>Ingredients</h2>
+      <header class="ingredients-list-header">
+        
+        <h4>Serves 50</h4>
+       </header>
 
       <?php listMediumIngredients() ?>
     </div>
     
 
     <div class="ingredients-list" id="large-ingredients">
-      <h2>Ingredients</h2>
+      <header class="ingredients-list-header">
+            
+            <h4>Serves 100</h4>
+            </header>
 
       <?php listLargeIngredients() ?>
     </div>
+    </div>
 
 		<div class="the-steps">
-						<h2>Directions</h2>
+						<h3>Directions</h3>
 
 			<?php listSteps() ?>
 
 		</div>
+
+    
+
+        
+      </div>
+
+      <div class="recipe-categories"><?php the_terms( $post->ID, 'recipe_categories', 'Filed Under: ', ' ', ' ' ); ?></div>
+
+      </div><!-- .entry-content -->
+
+    </article><!-- #post-## -->
+
 
 		<?php
 $post_type = 'recipe';
@@ -75,11 +108,13 @@ if ($tax_terms) {
     $count = $my_query->post_count;
     if ($count > 1) {
     	if( $my_query->have_posts() ) {
-      echo '<h2>Other Recipes using <a href="' . get_site_url() . '/main_ingredients/' .$tax_term->slug. '/">'. $tax_term->name . '</a></h2>';
+      echo '<div class="related-recipes"><h2>Other Recipes using <a href="' . get_site_url() . '/main_ingredients/' .$tax_term->slug. '/">'. $tax_term->name . '</a></h2>';
       while ($my_query->have_posts()) : $my_query->the_post(); ?>
 
       	<?php if ( $post->ID != $wp_query->post->ID ) { ?>
-        <p><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></p>
+        <h4 class="recipe-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
+        </div>
+
         <?php }
       endwhile;
     }
@@ -92,14 +127,3 @@ if ($tax_terms) {
   }
 }
 ?>
-
-		<div class="recipe-categories"><?php the_terms( $post->ID, 'recipe_categories', 'Filed Under: ', ' ', ' ' ); ?>
-	</div>
-
-
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->

@@ -1,1 +1,438 @@
-*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}*{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}html,body,div,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,ol,ul,li,form,legend,label,table,header,footer,nav,section,figure{margin:0;padding:0}header,footer,nav,section,article,hgroup,figure{display:block}html{font-size:62.5%}img,canvas,iframe,video,svg{max-width:100%}.overflow-container{overflow-y:scroll;-webkit-overflow-scrolling:touch}a,a:visited{color:#000000;text-decoration:none;font-weight:100}body{font-size:15px;font-size:1.5rem}.embed-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;height:auto}.embed-container iframe,.embed-container object,.embed-container embed{position:absolute;top:0;left:0;width:100%;height:100%}h1,h2,h3,h4,h5,h6{font-weight:300}body{font-family:"rooney-web",sans-serif}h4{font-family:"rooney-web",sans-serif}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.recipe-categories a {
+  background: #7abcd2;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+/* http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+*/
+/*------------------------------------*\
+    $RESET
+\*------------------------------------*/
+/* Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, legend, label, table, header, footer, nav, section, figure {
+  margin: 0;
+  padding: 0;
+  margin-bottom: .75rem;
+}
+
+header, footer, nav, section, article, hgroup, figure {
+  display: block;
+}
+
+html {
+  font: 100%;
+  font: 1em/1.5;
+}
+
+img, canvas, iframe, video, svg {
+  max-width: 100%;
+}
+
+.overflow-container {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+a, a:visited {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 100;
+}
+
+section {
+  padding: 0 2.61792em;
+}
+
+.weekly-ingredient:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.recipe-categories:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (min-width: 769px) {
+  .weekly-ingredient-info {
+    float: left;
+    display: block;
+    margin-right: 3.28774%;
+    width: 65.57075%;
+  }
+  .weekly-ingredient-info:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .weekly-ingredient-footer {
+    float: left;
+    display: block;
+    margin-right: 3.28774%;
+    width: 31.1415%;
+  }
+  .weekly-ingredient-footer:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  #recipe-ingredients-list {
+    float: left;
+    display: block;
+    margin-right: 3.28774%;
+    width: 39.74882%;
+  }
+  #recipe-ingredients-list:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .the-steps {
+    padding-left: 2rem;
+    float: left;
+    display: block;
+    margin-right: 3.28774%;
+    width: 56.96344%;
+  }
+  .the-steps:last-child {
+    margin-right: 0;
+  }
+}
+
+.recipe-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+body {
+  font-family: "rooney-web", sans-serif;
+  color: #222;
+}
+
+h4 {
+  font-family: "rooney-web", sans-serif;
+}
+
+.label {
+  text-transform: uppercase;
+  font-family: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+  font-size: 9.88875px;
+  font-size: 0.61805rem;
+  font-weight: 900;
+}
+
+article.recipe-index {
+  margin: 13px 0;
+}
+
+.recipe-list {
+  padding: 0 2.61792em;
+  padding-bottom: 3.5rem;
+}
+
+.recipe-list-header {
+  text-transform: uppercase;
+  font-family: "brandon-grotesque", sans-serif;
+  font-size: 25.888px;
+  font-size: 1.618rem;
+  text-align: center;
+}
+
+.recipe-ready {
+  color: #c9cdd3;
+  font-size: 9.88875px;
+  font-size: 0.61805rem;
+}
+.recipe-ready:before {
+  content: 'Ready in ';
+}
+
+.recipe-title {
+  font-size: 25.888px;
+  font-size: 1.618rem;
+  border-bottom: 1px solid #ff5e42;
+  font-weight: 100;
+  margin-bottom: 0;
+}
+.recipe-title:after {
+  height: 0;
+  width: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid gray;
+}
+
+.recipe-short-description {
+  padding-top: 0;
+}
+
+.recipe-list-alphabet {
+  color: #b8b8b8;
+}
+
+.weekly-ingredient {
+  padding: 0 2.61792em;
+}
+
+.weekly-ingredient-footer h2 {
+  font-size: .75rem;
+  color: white;
+  font-family: "brandon-grotesque", sans-serif;
+  text-transform: uppercase;
+}
+
+.ingredient-list ul li, .recipe-info ul li {
+  list-style-type: none;
+  border-bottom: 1px solid white;
+  padding-bottom: 0.34375rem;
+  margin-bottom: 0.34375rem;
+}
+
+ul.recipe-serving-size-selection li {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.single-recipe .recipe-title {
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #ff5e42;
+  border: none;
+}
+@media screen and (min-width: 769px) {
+  .single-recipe .recipe-title {
+    padding-top: 3rem;
+    font-size: 3rem;
+  }
+}
+.single-recipe h3 {
+  border-bottom: 3px solid #ff5e42;
+}
+
+.recipe-serving-size h3 {
+  border: none;
+}
+
+.recipe-serving-size {
+  margin-bottom: 0px;
+  background: rgba(148, 168, 180, 0.2);
+  padding-top: .3rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  margin-bottom: .75rem;
+  margin-top: 1.5rem;
+}
+
+.recipe-serving-size h3, .recipe-serving-size ul {
+  display: inline-block;
+}
+
+.ingredient-list li:first-child {
+  border-top: 1px solid white;
+}
+
+.ingredient-list li:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.ingredient-list ul {
+  padding-top: 0.34375rem;
+  background: rgba(148, 168, 180, 0.2);
+  padding: .25rem .5rem;
+}
+
+#recipe-ingredients-list {
+  margin-bottom: 1.5rem;
+}
+
+.recipe-categories:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.recipe-categories a {
+  background: #a0cfdf;
+  padding: .25rem;
+  border-radius: 0;
+  margin-bottom: .5rem;
+  line-height: 1.8;
+  margin-right: .3rem;
+}
+.recipe-categories a:hover {
+  background: #7abcd2;
+}
+
+.single-recipe h4.recipe-title {
+  padding-top: 0px;
+}
+
+.ingredient-toggle {
+  border-bottom: 3px solid #7abcd2;
+  padding: 0 .3rem;
+  transition: all .2s ease;
+}
+
+.ingredient-toggle:hover {
+  background: rgba(122, 188, 210, 0.6);
+}
+
+.ingredient-toggle.active {
+  background: rgba(122, 188, 210, 0.6);
+}
+
+.related-recipes {
+  background: #94a8b4;
+  padding: 0.5rem 2.61792em;
+  margin-top: 2rem;
+}
+.related-recipes h2 {
+  font-size: .75rem;
+  color: white;
+  font-family: "brandon-grotesque", sans-serif;
+  text-transform: uppercase;
+}
+.related-recipes h2 a {
+  color: white;
+  transition: all .3s ease;
+}
+.related-recipes h2 a:hover {
+  background: rgba(254, 254, 254, 0.2);
+}
+
+.recipe-tip {
+  background: rgba(148, 168, 180, 0.2);
+  padding: .5rem;
+  border-radius: 5px;
+}
+
+.related-recipes .recipe-title {
+  font-size: 1rem;
+  border: none;
+}
+.related-recipes .recipe-title a {
+  border-bottom: 3px solid white;
+  transition: all .3s ease;
+}
+.related-recipes .recipe-title a:hover {
+  background: rgba(254, 254, 254, 0.2);
+}
+
+.recipe-content {
+  padding-bottom: 2rem;
+}
+
+@media screen and (min-width: 769px) {
+  .the-steps h3 {
+    margin-bottom: calc(5px+1.5rem);
+  }
+}
+
+#masthead {
+  background: #ff5e42;
+  font-family: "brandon-grotesque", sans-serif;
+  color: white;
+  padding: 2.61792em;
+  margin-bottom: 0;
+  line-height: 1;
+  text-align: center;
+}
+
+html {
+  background-color: #ff5e42;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 10%, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0.5) 30%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0.5) 70%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0.5) 80%, rgba(255, 255, 255, 0.5) 90%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%), linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 10%, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0.5) 30%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0.5) 70%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0.5) 80%, rgba(255, 255, 255, 0.5) 90%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0) 100%);
+  background-size: 4.5em 4.5em;
+}
+
+body {
+  margin-top: 1.2em;
+  background: #fefefe;
+}
+
+h2.weekly-ingredient-heading {
+  background: #7ABCD2;
+  padding: .5em;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "brandon-grotesque", sans-serif;
+  font-weight: 300;
+  color: white;
+}
+
+.weekly-ingredient-footer {
+  background: #7ABCD2;
+  border-radius: 5px;
+  margin-right: .5em;
+}
+
+.weekly-ingredient {
+  background: #7ABCD2;
+}
+
+.weekly-ingredient-footer {
+  background: rgba(255, 94, 66, 0.2);
+  padding: 1rem;
+}
+
+.weekly-ingredient-footer li {
+  margin-right: .5em;
+  list-style-type: none;
+  border-bottom: none;
+  font-size: 1rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+.weekly-ingredient-footer li a {
+  border-bottom: 3px solid #fff;
+  transition: all .2s ease;
+}
+.weekly-ingredient-footer li a:hover {
+  background: rgba(254, 254, 254, 0.2);
+}

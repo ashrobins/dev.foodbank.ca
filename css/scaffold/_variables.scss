@@ -1,4 +1,9 @@
+$typography-ratio: $golden;
+$tr: $typography-ratio;
+
 $_color-base-grey: rgb(229,231,234);
+$slategrey: #94a8b4;
+$elblue: #7ABCD2;
 
 $palettes: (
     teal: (
@@ -17,8 +22,11 @@ $palettes: (
         dark: darken(#18beff, 10%)
     ),
     salmon: (
-        base: #EE8888
+        base: rgb(200,0,0)
 
+        ),
+    accent: (
+        base: rgb(255,94,66)
         )
 );
 
@@ -30,3 +38,9 @@ $palettes: (
 
 $sansserif: "brandon-grotesque",sans-serif;
 $serif: "rooney-web",sans-serif;
+
+%bluebox {
+    background: $elblue;
+    padding: 1rem;
+    border-radius: 5px;
+}

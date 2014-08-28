@@ -7,17 +7,17 @@ $MQs: true;
 
 @mixin bp($point) {
   @if ($MQs) {
-    $bp-babybear: "(max-width: 600px)";
-    $bp-mamabear: "(max-width: 1250px)";
-    $bp-papabear: "(max-width: 1600px)";
+    $bp-babybear: "(max-width: 800px)";
+    $bp-teenbear: "(max-width: 1250px)";
+    $bp-adultbear: "(max-width: 1600px)";
   
-    @if $point == papa-bear {
+    @if $point == adult {
       @media #{$bp-papabear} { @content; }
     }
-    @else if $point == mama-bear {
+    @else if $point == teen {
       @media #{$bp-mamabear} { @content; }
     }
-    @else if $point == baby-bear {
+    @else if $point == baby {
       @media #{$bp-babybear}  { @content; }
     }
   }
@@ -26,9 +26,9 @@ $MQs: true;
 
 /* http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
 */
-@mixin font-size($sizeValue: 1.6) {
-  font-size: ($sizeValue * 10) + px;
-  font-size: $sizeValue + rem;
+@mixin font-size($sizeValue) {
+  font-size: $sizeValue;
+  font-size: rem(strip-unit($sizeValue));
 }
 
 // http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/

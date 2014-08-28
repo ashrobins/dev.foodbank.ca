@@ -11,13 +11,15 @@
 html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, legend, label, table, header, footer, nav, section, figure { 
 	margin: 0; 
 	padding: 0; 
+	margin-bottom: .75rem;
 } 
 header, footer, nav, section, article, hgroup, figure {
 	display: block;	
 }
 
 html {
-  font-size: 62.5%; /* Sets up the Base 10 stuff */
+  font: 100%;
+  font: 1em/1.5;
 }
 
 
@@ -30,5 +32,9 @@ a, a:visited {
 }
 
 body {
-	@include font-size(1.5);
+	
+}
+
+section {
+	padding: 0 $gutter;
 }
