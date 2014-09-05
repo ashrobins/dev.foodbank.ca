@@ -3,10 +3,10 @@
  * Custom functions that act independently of the theme templates
  *
  *
- *  <li>Serving Size: <?php the_field('default_serving_size'); ?></li>
- *     <li>Prep time: <?php the_field('prep_time'); ?></li>
- *     <li>Cook time: <?php the_field('cook-time'); ?></li>
- *     <li>Ready in: <?php the_field('ready_in'); ?></li>
+ *  
+ *     
+ *    
+ *    
  * @package dteskitchen
  */
 
@@ -16,24 +16,39 @@
 
 function show_weekly_ingredient() {
 
+
   $term = get_field('featured_ingredient');
+
 
   if( $term ): ?>
   <h2 class="weekly-ingredient-heading">This week's featured ingredient</h2>
   <h3 class="weekly-ingredient-feature"><?php echo $term->name; ?></h3>
+  
   <p><?php echo $term->description; ?></p>
 
  
   <div class="weekly-ingredient-info">
+  
+
       <?php the_field('about', $term); ?>
+
   </div>
   <footer class='weekly-ingredient-footer'>
+  
       <h2>Recipes using <?php echo $term->name; ?> </h3>
 
       <?php related_recipes($term->slug) ?>
   </footer>
+  
+
+  </div>
 
   <?php endif; 
+}
+
+function show_ingredient_info(){
+
+
 }
 
 
@@ -73,6 +88,39 @@ function readyIn(){
   }
 }
 
+/*
+ Different Recipe Archives 
+*/
+
+ function recipesByName() {
+  // get posts
+  $recipesbyname = new WP_Query(array(
+    'post_type'   => 'recipe',
+    'posts_per_page'  => -1,
+    'orderby'   => 'title',
+    'order'     => 'ASC'
+    ));
+
+  if ( $recipesbyname->have_posts() ) :
+    $curr_letter = '';
+
+
+    while ( $recipesbyname->have_posts() ) : $recipesbyname->the_post();
+
+     $this_letter = strtoupper(substr($post->post_title,0,1));
+                  
+      if ($this_letter != $curr_letter) {
+          echo "<h2 class='recipe-list-alphabet'> $this_letter </h2>";
+          $curr_letter = $this_letter;
+          }
+
+      get_template_part( 'recipe', 'archive' );
+
+     endwhile;
+     endif;
+     wp_reset_postdata();
+ }
+
 function archiveList($class_name) { ?>
   <article id="post-<?php the_ID(); ?>" <?php post_class($class_name); ?>>
     <header>
@@ -87,6 +135,17 @@ function archiveList($class_name) { ?>
   </article><!-- #post-## -->
 
 <? }
+
+function recipesBySeason(){
+
+
+}
+
+
+
+/*
+ Recipe Ingredient Displays
+*/
 
 function listSmallIngredients(){
   ?>

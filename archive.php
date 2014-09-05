@@ -62,8 +62,21 @@ get_header(); ?>
 						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
 							_e( 'Chats', 'dteskitchen' );
 
+						elseif ( is_tax( 'main_ingredients' ) ) :
+							$term = $wp_query->get_queried_object();
+							$title = $term->name;
+							echo("Recipes using " . $title);
+
+
+							elseif ( is_tax( 'recipe_categories'  ) ) :
+								$term = $wp_query->get_queried_object();
+								$title = $term->name;
+								echo($title . " Recipes" );
+
+
+
 						else :
-							_e( 'Index', 'dteskitchen' );
+							_e( 'Recipes', 'dteskitchen' );
 
 						endif;
 					?>

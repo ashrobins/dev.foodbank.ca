@@ -2,32 +2,31 @@
 /**
  * @package dteskitchen
  */
+
+$postclass = "";
+$has_photo = false;
+
+if(has_post_thumbnail()){
+  $postclass = "photo-recipe";
+  $has_photo = true;
+}
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class($postclass); ?>>
 	<header class="recipe-header">
-		<h1 class="recipe-title"><?php the_title(); ?></h1>
-	   <div class="recipe-intro">
+		
+    <h1 class="recipe-title"><?php the_title(); ?></h1>
+	  
+     <div class="recipe-intro">
        <?php the_field('recipe_short_description'); ?>
      </div>
-     
 
   </header><!-- .entry-header -->
 
 
 
 	<div class="recipe-content">
-		<div class="recipe-info">
-		<h3>Basic Facts</h3>
-		<ul>
-			<li>Prep time: <?php the_field('prep_time'); ?></li>
-			<li>Cook time: <?php the_field('cook_time'); ?></li>
-			<li>Ready in:  <?php the_field('ready_in'); ?></li>
-		</ul>
-    <div class="recipe-suggestions">
-    <?php the_field('recipe_suggestions'); ?>
-	 </div>
-   </div>
+
    <div class="recipe-serving-size">
    <h3>Serving Size:</h3>
    <ul class="recipe-serving-size-selection">
@@ -68,6 +67,7 @@
 
       <?php listLargeIngredients() ?>
     </div>
+    
     </div>
 
 		<div class="the-steps">
@@ -76,16 +76,47 @@
 			<?php listSteps() ?>
 
 		</div>
+    </div> <!-- recipe content-->
 
-    
+        <div class="recipe-information">
+        <div class="recipe-info">
+        <h3>Basic Facts</h3>
+        <ul>
+          <?php if(get_field('prep_time')) { ?>
+          <li>Prep time: <?php the_field('prep_time'); ?></li>
+          <?php }?>
+          <?php if(get_field('cook_time')) { ?>
+          <li>Cook time: <?php the_field('cook_time'); ?></li>
+          <?php }?>
+          <?php if(get_field('ready_in')) { ?>
+          <li>Ready in:  <?php the_field('ready_in'); ?></li>
+          <?php }?>
+        </ul>
+        <div class="recipe-suggestions">
+        <?php the_field('recipe_suggestions'); ?>
+       </div>
+       <div class="recipe-contributor">
+        <?php the_field('contributor_acknowledgement') ?>
+       </div>
+       <div class="recipe-categories"><?php the_terms( $post->ID, 'recipe_categories', 'Filed Under: ', ' ', ' ' ); ?></div>
 
+       </div>
+
+       <?php if($has_photo){ ?>
         
-      </div>
+        <div class="recipe-photo">
+          <?php the_post_thumbnail() ?>
+        </div>
 
-      <div class="recipe-categories"><?php the_terms( $post->ID, 'recipe_categories', 'Filed Under: ', ' ', ' ' ); ?></div>
+       <?php } ?>
+       </div>
+
 
       </div><!-- .entry-content -->
-
+    
+    <footer class="single-recipe-footer">
+    <a href="<?php echo site_url(); ?>#all-recipes">Browse all Recipes</a>
+    </footer>
     </article><!-- #post-## -->
 
 

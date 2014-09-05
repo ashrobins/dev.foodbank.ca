@@ -96,31 +96,37 @@ section {
 }
 
 @media screen and (min-width: 769px) {
-  #recipe-ingredients-list {
+  #recipe-ingredients-list, .photo-recipe .recipe-info {
     float: left;
     display: block;
     margin-right: 3.28774%;
     width: 39.74882%;
   }
-  #recipe-ingredients-list:last-child {
+  #recipe-ingredients-list:last-child, .photo-recipe .recipe-info:last-child {
     margin-right: 0;
   }
 }
 
 @media screen and (min-width: 769px) {
-  .the-steps {
+  .the-steps, .recipe-photo {
     padding-left: 2rem;
     float: left;
     display: block;
     margin-right: 3.28774%;
     width: 56.96344%;
   }
-  .the-steps:last-child {
+  .the-steps:last-child, .recipe-photo:last-child {
     margin-right: 0;
   }
 }
 
-.recipe-content:after {
+@media screen and (min-width: 769px) {
+  .recipe-photo {
+    margin-top: 1.7em;
+  }
+}
+
+.recipe-content:after, .recipe-information:after {
   content: "";
   display: table;
   clear: both;
@@ -164,6 +170,10 @@ h4 {
   font-size: 9.88875px;
   font-size: 0.61805rem;
   font-weight: 900;
+}
+
+p {
+  max-width: 45em;
 }
 
 article.recipe-index {
@@ -301,7 +311,7 @@ ul.recipe-serving-size-selection li {
   padding: .25rem;
   border-radius: 0;
   margin-bottom: .5rem;
-  line-height: 1.8;
+  line-height: 2;
   margin-right: .3rem;
 }
 .recipe-categories a:hover {
@@ -373,6 +383,10 @@ ul.recipe-serving-size-selection li {
   }
 }
 
+.recipe-photo img {
+  border-radius: 15px;
+}
+
 #masthead {
   background: #ff5e42;
   font-family: "brandon-grotesque", sans-serif;
@@ -392,6 +406,24 @@ html {
 body {
   margin-top: 1.2em;
   background: #fefefe;
+}
+
+a.masthead-link, a.masthead-link:visited {
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all .3s;
+}
+a.masthead-link:hover, a.masthead-link:visited:hover {
+  border-bottom: 3px solid rgba(255, 255, 255, 0.6);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.masthead-home-link, .masthead-home-link:visited {
+  color: #fff;
+  transition: all .3s;
+}
+.masthead-home-link:hover, .masthead-home-link:visited:hover {
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 h2.weekly-ingredient-heading {
@@ -435,4 +467,21 @@ h2.weekly-ingredient-heading {
 }
 .weekly-ingredient-footer li a:hover {
   background: rgba(254, 254, 254, 0.2);
+}
+
+.page-title {
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #ff5e42;
+  border: none;
+}
+@media screen and (min-width: 769px) {
+  .page-title {
+    padding-top: 3rem;
+    font-size: 3rem;
+  }
+}
+
+.ingredient-archive-description {
+  padding: 2.61792em;
+  background: #7ABCD2;
 }

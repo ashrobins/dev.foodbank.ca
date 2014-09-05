@@ -87,7 +87,7 @@ margin-bottom: 0;
   padding: .25rem;
   border-radius: 0;
   margin-bottom: .5rem;
-  line-height: 1.8; 
+  line-height: 2; 
   margin-right: .3rem;
 
   &:hover {
@@ -169,4 +169,8 @@ margin-bottom: 0;
   margin-bottom: calc(5px+1.5rem);
 
   }
+}
+
+.recipe-photo img {
+  border-radius: 15px;
 }

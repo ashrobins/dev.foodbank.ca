@@ -46,7 +46,7 @@ function recipe_sizing_magic(){
 
 
       $ingredients.each(function(){
-        var measurement = $(this).find(default_measurement).val(),
+        var measurement = $(this).find(default_measurement).val().toLowerCase(),
             amount      = convert_fractions($(this).find(default_amount).val()),
             ingredient  = $(this).find(default_ingredient).val();
 
@@ -156,6 +156,14 @@ function convert(amount, measurement, serving_size){
       case "oz":
         return convert_oz(new_amount);
         break;
+      case "ml":
+        return convert_ml(new_amount);
+      case "lb":
+      case "lbs":
+        return convert_lb(new_amount);
+      case "gallon":
+      case "gallons":
+        return convert_gallon(new_amount);
       default:
         return convert_generic(new_amount, measurement);
         break;
@@ -169,9 +177,22 @@ function convert_tsp(amount){
     return convert_tbs(amount/3);
   }
   else {
-    return update_measurement(amount, "tsp");
+    return update_measurement(amount, "tsp", "tsp");
   }
 
+}
+
+function convert_ml(amount){
+  if (amount > 1000){
+    return convert_litres(amount/1000);
+  }
+  else {
+    return update_measurement(amount, "ml", "ml");
+  }
+}
+
+function convert_litres(amount){
+  return update_measurement(amount, "litres", "litre");
 }
 
 function convert_tbs(amount){
@@ -179,7 +200,7 @@ function convert_tbs(amount){
     return convert_cups(amount/16)
   }
   else {
-    return update_measurement(amount, "tbs");
+    return update_measurement(amount, "tbs", "tbs");
   }
 
 }
@@ -189,7 +210,7 @@ function convert_cups(amount){
     return convert_quart(amount/4)
   }
   else {
-    return update_measurement(amount, "cups");
+    return update_measurement(amount, "cups", "cup");
   }
 
 }
@@ -199,27 +220,42 @@ function convert_quart(amount){
     return convert_gallon(amount/4)
   }
   else {
-    return update_measurement(amount, "quarts")
+    return update_measurement(amount, "quarts", "quart")
   }
 
 }
 
 function convert_gallon(amount){
-  return update_measurement(amount, "gallons");
+  return update_measurement(amount, "gallons", "gallon");
+}
+
+function convert_lb(amount){
+  return update_measurement(amount, "lbs", "lb");
 }
 
 function convert_oz(amount, measurement){
-  return update_measurement(amount, "oz");
+  return update_measurement(amount, "oz", "oz");
 }
 
 function convert_generic(amount, measurement){
-  return update_measurement(amount, measurement);
+  return update_measurement(amount, measurement, measurement);
 }
 
-function update_measurement(amount, measurement){
-  var quantity = roundToNearest(amount);
-  var updated_amount = quantity + " " + measurement;
-  return updated_amount;
+function update_measurement(amount, measurement, singular){
+  var quantity = roundToNearest(amount),
+      updated_amount = quantity + " " + measurement,
+      singular_amount = quantity + " " + singular;
+      console.log(singular_amount);
+      console.log(quantity);
+
+  if (quantity == 1){
+    return singular_amount;
+  }
+  else {
+    return updated_amount;
+
+  }
+
 }
 
 
@@ -267,8 +303,12 @@ function roundToNearest(amount){
   if (wholenumber == 0) {
     quantity = "<span class='ingredient-fraction'>" + fraction + "</span>";
   }
-  else {
+  else if (fraction.length > 1) {
     quantity = wholenumber.toString() + " <span class='ingredient-fraction'>" + fraction + "</span>";
+
+  }
+  else {
+    quantity = wholenumber.toString();
   }
   
   return quantity;

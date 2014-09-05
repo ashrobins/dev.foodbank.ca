@@ -17,19 +17,25 @@
 }
 
 
-#recipe-ingredients-list {
+#recipe-ingredients-list, .photo-recipe .recipe-info {
   @include media(769px){
     @include span-columns(5);
   }
 }
 
-.the-steps{
+.the-steps, .recipe-photo {
   @include media(769px){
     padding-left: 2rem;
     @include span-columns(7);
   }
 }
 
-.recipe-content {
+.recipe-photo {
+  @include media(769px){
+  margin-top: 1.7em;
+}
+}
+
+.recipe-content, .recipe-information {
   @include clearfix;
 }

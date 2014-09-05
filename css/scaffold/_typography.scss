@@ -17,3 +17,7 @@ h4 {
   @include font-size( modular-scale(16px,   -1, $typography-ratio) );
   font-weight: 900;
 }
+
+p {
+  max-width: 45em;
+}

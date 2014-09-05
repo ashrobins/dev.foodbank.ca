@@ -12,6 +12,14 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }
 
+// Hacky way of getting rid of width/height in featured image
+add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
+
+function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
+    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+    return $html;
+}
+
 if ( ! function_exists( 'dteskitchen_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.

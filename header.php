@@ -24,16 +24,37 @@
 <script type="text/javascript" src="//use.typekit.net/cbi6aga.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
+<?php if ( is_user_logged_in() ) { ?>
+ 
+<style type="text/css" media="screen">
+  html { margin-top: 32px !important; }
+  * html body { margin-top: 32px !important; }
+  @media screen and ( max-width: 782px ) {
+    html { margin-top: 46px !important; }
+    * html body { margin-top: 46px !important; }
+  }
+
+</style>
+  
+<?php } ?>
+
+
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
+<?php if (get_field('procurement_pitch', 472)) { ?>
+  <div class="weekly-ingredient-procurement">
+  <?php the_field('procurement_pitch'); ?>
+  </div>
+<?php  } ?>
 <a href="<?php echo get_site_url(); ?>">
 	<header id="masthead" class="site-header" role="banner">
-<!--       <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png"> -->
-		<div class="masthead-subhead">Potluck Cafe Society Presents</div>
-    <h1>Recipe Bank</h1>
-    <div class="masthead-subhead">A DTES Kitchen Tables Tool</div>
+  
+
+		<div class="masthead-subhead"><a class="masthead-link" href="http://potluckcatering.org/">Potluck Cafe Society</a> Presents</div>
+    <h1><a href="/" class="masthead-home-link">Recipe Bank</a></h1>
+    <div class="masthead-subhead">A <a class="masthead-link" href="http://dteskitchentables.org">DTES Kitchen Tables</a> Tool</div>
 
 	</header><!-- #masthead -->
 </a>

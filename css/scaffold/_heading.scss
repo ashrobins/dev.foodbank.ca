@@ -118,3 +118,25 @@ body {
   margin-top: 1.2em;
   background: #fefefe;
 }
+
+a.masthead-link, a.masthead-link:visited {
+  color: #fff;
+  border-bottom: 1px solid rgba(#fff, .3);
+  transition: all .3s;
+
+  &:hover {
+    border-bottom:3px solid rgba(#fff, .6);
+    text-shadow: 2px 2px 1px rgba(0,0,0,.2)
+  }
+}
+
+.masthead-home-link, .masthead-home-link:visited {
+  color: #fff;
+  transition: all .3s;
+
+  &:hover {
+    text-shadow: 2px 2px 1px rgba(0,0,0,.2)
+  }
+
+
+}
