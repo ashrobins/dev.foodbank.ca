@@ -24,11 +24,13 @@ color: white;
 }
 
 
-.weekly-ingredient-footer {
+.weekly-ingredient-recipes {
 background: rgba(255,94,66,.2);
 padding: 1rem;
 }
-
+.weekly-ingredient-recipes li, .related-recipes li {
+display: inline-block;
+}
 .weekly-ingredient-footer li {
   margin-right: .5em;
   list-style-type: none;
@@ -45,4 +47,37 @@ padding: 1rem;
 
     }
   }
+}
+
+.weekly-ingredient {
+  padding: 0 $gutter;
+}
+
+.weekly-ingredient-footer h2 {
+  font-size: .75rem;
+  color: white;
+  font-family: $sansserif;
+  text-transform: uppercase;
+}
+
+.weekly-ingredient-procurement {
+  background: rgba(#ffffff, .5);
+  padding: 1em;
+}
+.weekly-ingredient-procurement a {
+  // border-bottom: 1px solid #fff;
+  border-bottom: 1px solid $elblue;
+
+  &:hover {
+    background: rgba($elblue, .2);  }
+}
+
+.weekly-ingredient-procurement p {
+  margin-bottom: .5em;
+}
+
+.weekly-ingredient-procurement strong {
+  // text-align: right;
+  display: block;
+  margin-top: 1em;
 }

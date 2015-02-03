@@ -130,53 +130,14 @@
             "label": "The Steps",
             "name": "the_steps",
             "prefix": "",
-            "type": "repeater",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
-            "min": 1,
-            "max": "",
-            "layout": "row",
-            "button_label": "Add Step",
-            "sub_fields": [
-                {
-                    "key": "field_5359883d24d3d",
-                    "label": "Step or tip or suggestion?",
-                    "name": "step_tip",
-                    "prefix": "",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "column_width": "",
-                    "choices": {
-                        "Step": "Step",
-                        "Tip": "Tip",
-                        "Suggestion": "Suggestion"
-                    },
-                    "default_value": "Step",
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": "",
-                    "disabled": 0,
-                    "readonly": 0
-                },
-                {
-                    "key": "field_5359887b24d3e",
-                    "label": "Step",
-                    "name": "step",
-                    "prefix": "",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "default_value": "",
-                    "toolbar": "basic",
-                    "media_upload": 0
-                }
-            ]
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0
         },
         {
             "key": "field_53a8e06138e3a",
@@ -199,7 +160,8 @@
             "conditional_logic": 0,
             "default_value": "",
             "toolbar": "full",
-            "media_upload": 0
+            "media_upload": 0,
+            "tabs": "all"
         },
         {
             "key": "field_53a8e0d838e43",
@@ -222,7 +184,8 @@
             "conditional_logic": 0,
             "default_value": "",
             "toolbar": "full",
-            "media_upload": 0
+            "media_upload": 0,
+            "tabs": "all"
         },
         {
             "key": "field_53a8e13338e4b",
@@ -245,7 +208,8 @@
             "conditional_logic": 0,
             "default_value": "",
             "toolbar": "full",
-            "media_upload": 0
+            "media_upload": 0,
+            "tabs": "all"
         }
     ],
     "location": [

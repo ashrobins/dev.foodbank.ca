@@ -1,0 +1,31 @@
+.share-icons {
+.iconic {
+  height: 2rem;
+  margin-right: 15%;
+  width: 15%;
+
+  @include media(769px){
+    height: 3rem;
+  }
+  }
+
+.iconic {
+  fill: $elblue;
+  &:hover {
+  fill: darken($elblue, 20);
+  }
+}
+
+.iconic-property-accent {
+  fill: rgba(148, 168, 180, 0.2);
+}
+
+.i-facebook {
+  background: rgba(148, 168, 180, 0.2);
+}
+}
+
+
+.recipe-header .recipe-title {
+  display: inline-block;
+}

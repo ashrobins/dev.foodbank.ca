@@ -22,22 +22,31 @@ function show_weekly_ingredient() {
 
   if( $term ): ?>
   <h2 class="weekly-ingredient-heading">This week's featured ingredient</h2>
+ 
+ 
+  <div class="weekly-ingredient-info">
   <h3 class="weekly-ingredient-feature"><?php echo $term->name; ?></h3>
   
   <p><?php echo $term->description; ?></p>
 
- 
-  <div class="weekly-ingredient-info">
   
 
       <?php the_field('about', $term); ?>
 
+  
+
   </div>
   <footer class='weekly-ingredient-footer'>
-  
+  <?php if (get_field('procurement_pitch', 472)) { ?>
+    <div class="weekly-ingredient-procurement">
+    <?php the_field('procurement_pitch'); ?>
+    </div>
+  <?php  } ?>
+      <div class="weekly-ingredient-recipes">
       <h2>Recipes using <?php echo $term->name; ?> </h3>
 
       <?php related_recipes($term->slug) ?>
+      </div>
   </footer>
   
 
@@ -94,31 +103,7 @@ function readyIn(){
 
  function recipesByName() {
   // get posts
-  $recipesbyname = new WP_Query(array(
-    'post_type'   => 'recipe',
-    'posts_per_page'  => -1,
-    'orderby'   => 'title',
-    'order'     => 'ASC'
-    ));
 
-  if ( $recipesbyname->have_posts() ) :
-    $curr_letter = '';
-
-
-    while ( $recipesbyname->have_posts() ) : $recipesbyname->the_post();
-
-     $this_letter = strtoupper(substr($post->post_title,0,1));
-                  
-      if ($this_letter != $curr_letter) {
-          echo "<h2 class='recipe-list-alphabet'> $this_letter </h2>";
-          $curr_letter = $this_letter;
-          }
-
-      get_template_part( 'recipe', 'archive' );
-
-     endwhile;
-     endif;
-     wp_reset_postdata();
  }
 
 function archiveList($class_name) { ?>

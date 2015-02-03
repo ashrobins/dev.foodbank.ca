@@ -16,8 +16,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
-
 <link rel='stylesheet' id='dteskitchen-style-css'  href='<?php echo get_template_directory_uri(); ?>/css/build/global.css' type='text/css' media='all' />
+<link rel="Shortcut Icon" href="http://dteskitchentables.org/wp-content/themes/structure_blog_full/images/favicon.ico" type="image/x-icon" />
+
 <script>
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
   </script>
@@ -43,19 +44,16 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-<?php if (get_field('procurement_pitch', 472)) { ?>
-  <div class="weekly-ingredient-procurement">
-  <?php the_field('procurement_pitch'); ?>
-  </div>
-<?php  } ?>
+
 <a href="<?php echo get_site_url(); ?>">
 	<header id="masthead" class="site-header" role="banner">
+    <div class="a-wrapper">
   
 
 		<div class="masthead-subhead"><a class="masthead-link" href="http://potluckcatering.org/">Potluck Cafe Society</a> Presents</div>
     <h1><a href="/" class="masthead-home-link">Recipe Bank</a></h1>
     <div class="masthead-subhead">A <a class="masthead-link" href="http://dteskitchentables.org">DTES Kitchen Tables</a> Tool</div>
-
+  </div><!---wrap-->
 	</header><!-- #masthead -->
 </a>
 	<div id="content" class="site-content">

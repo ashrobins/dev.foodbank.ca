@@ -16,11 +16,12 @@ margin-bottom: 0;
 
 .single-recipe {
   .recipe-title {
+   
     margin-bottom: 1.5rem;
     border-bottom: 3px solid palette(accent);
     border: none;
     @include media(769px){
-      padding-top: 3rem;
+    
       font-size: 3rem;
       
     }
@@ -30,6 +31,15 @@ margin-bottom: 0;
   }
 }
 
+
+.single-recipe .recipe-header{
+    padding-top: 2rem;
+    @include media(769px){
+      padding-top: 3rem;
+      
+    }
+  }
+  
 .recipe-serving-size h3 {
   border: none;
 }
@@ -166,11 +176,54 @@ margin-bottom: 0;
 
 .the-steps h3 {
   @include media(769px){
-  margin-bottom: calc(5px+1.5rem);
-
+    margin-bottom: 1.65rem;
   }
+}
+
+.recipe-suggestions h3 {
+  color: $elblue;
+  border-bottom: none;
+  font-family: $sansserif;
+  margin-bottom: .5rem;
+  margin-top: 1.5rem;
+  text-transform: uppercase;
+
+}
+
+.recipe-suggestions {
+  font-size: .8rem;
 }
 
 .recipe-photo img {
   border-radius: 15px;
+}
+
+.single-recipe-footer {
+  
+  background: rgba(148, 168, 180, 0.2);
+  font-family: $sansserif;
+  padding: 0 $gutter;
+  transition: all .3s easeInCirc;
+
+  a {
+    @include font-size( modular-scale(16px, 1, $typography-ratio));
+    display: block;
+  }
+
+  &:hover {
+    background: $elblue;
+  }
+
+}
+
+.recipe-contributor {
+  font-style: italic;
+}
+
+.recipe-contributor a {
+  border-bottom: 1px solid $elblue;
+  transition: all .2s ease;
+   &:hover {
+    color: $elblue;
+   }
 }

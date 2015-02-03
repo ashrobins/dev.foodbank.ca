@@ -1,0 +1,25 @@
+footer[role="contentinfo"] {
+  padding: $gutter;
+  background: $slategrey;
+}
+
+footer[role="contentinfo"] img {
+  border-radius: 5px;
+  width: 100%;
+
+}
+
+footer[role="contentinfo"] svg {
+  width: 6em;
+}
+
+footer[role="contentinfo"] p {
+  a {
+    border-bottom: 1px solid palette(accent);
+
+    &:hover {
+      background: rgba(#ffffff, .2);
+    }
+  }
+}
+

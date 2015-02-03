@@ -141,3 +141,11 @@ function recipe_clone_script() {
     if( 'recipe' == $post_type )
     wp_enqueue_script( 'recipe-clone-script', get_stylesheet_directory_uri() . '/js/clonerecipe.js' );
 }
+
+function iconify($icon) {
+	echo get_template_directory_uri() .'/img/' . $icon . '.svg';
+}
+
+
+
+

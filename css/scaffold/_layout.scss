@@ -39,3 +39,53 @@
 .recipe-content, .recipe-information {
   @include clearfix;
 }
+
+footer[role="contentinfo"]{
+  @include clearfix;
+}
+
+.footer-about-dtes {
+  @include media(769px) {
+    @include span-columns(4);
+  }
+}
+
+.footer-about-rb { 
+  @include media(769px){
+    @include span-columns(8);
+  }
+
+}
+
+.recipe-header {
+  // @include outer-container;
+    @include clearfix;
+  }
+
+.recipe-header .recipe-title {
+  @include media(769px){
+    @include span-columns(7);
+  }
+}
+
+.recipe-header .share-icons {
+
+  display:none;
+
+  @include media(769px){
+    @include span-columns(4);
+    @include shift(1);
+    display: block;
+  }
+
+
+
+
+}
+
+
+
+div.a-wrapper {
+  max-width: 1200px;
+  margin: auto;
+}

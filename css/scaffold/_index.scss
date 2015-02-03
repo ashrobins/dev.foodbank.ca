@@ -8,7 +8,7 @@ margin: 13px 0;
 .recipe-list-header {
   text-transform: uppercase;
   font-family: $sansserif;
-  @include font-size( modular-scale(16px, 1, $typography-ratio));
+  // @include font-size( modular-scale(16px, 1, $typography-ratio));
   text-align: center;
 
 }
@@ -28,9 +28,7 @@ margin: 13px 0;
   border-bottom: 1px solid palette(accent);
   font-weight: 100;
   margin-bottom: 0;
-  &:after {
-    @include triangle(12px, gray, down);
-  }
+  
 }
 
 .recipe-short-description {
@@ -43,13 +41,9 @@ margin: 13px 0;
 
 }
 
-.weekly-ingredient {
-  padding: 0 $gutter;
-}
-
-.weekly-ingredient-footer h2 {
-  font-size: .75rem;
-  color: white;
-  font-family: $sansserif;
-  text-transform: uppercase;
+.recipe-list-alphabet {
+font-family: "brandon-grotesque", sans-serif;
+text-transform: uppercase;
+font-size: 1rem;
+color: #7abcd2;
 }

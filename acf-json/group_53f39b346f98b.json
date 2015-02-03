@@ -1,0 +1,47 @@
+{
+    "key": "group_53f39b346f98b",
+    "title": "Ingredient Info - Image",
+    "fields": [
+        {
+            "key": "field_53f39b347d053",
+            "label": "Picture",
+            "name": "ingredient_picture",
+            "prefix": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all"
+        },
+        {
+            "key": "field_53f39b6f58122",
+            "label": "Photo Caption",
+            "name": "photo_caption",
+            "prefix": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "toolbar": "basic",
+            "media_upload": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "main_ingredients"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}
