@@ -152,39 +152,16 @@ function listLargeIngredients(){
 }
 
 
-function listSteps() {
-	if( have_rows('the_steps') ): ?>
- 			<ol class="recipe-steps">
- 	<?php
-     // loop through the rows of data
-    while ( have_rows('the_steps') ) : the_row();
+function listSteps() { ?>
+	
+ 			<div class="recipe-steps">
 
-			$step_or_tip = get_sub_field(step_tip);
-			$step_class = strtolower($step_or_tip);
-			?>
-				<?php if ($step_or_tip == "Step"):
-					?><li> 	        	<?php the_sub_field('step'); ?> </li>
-					<?php ;
-					else:
-						?>
-						<div class="recipe-tip">
-							<span class="label">Hot Tip</span>
-							<?php the_sub_field('step'); ?>
-						</div>
-						<?php
-						endif;
+    <?php the_field('the_steps'); ?>
+
+	
+    		</div> <?php
 
 
-
-    endwhile;
-    			?> </ol> <?php
-
-
-else :
-
-    // no layouts found
-
-endif;
 
 }
 ?>
