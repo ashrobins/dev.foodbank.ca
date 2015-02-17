@@ -180,6 +180,11 @@ margin-bottom: 0;
   }
 }
 
+.the-steps p {
+  display: list-item;
+  list-style-type: decimal;
+}
+
 .recipe-suggestions h3 {
   color: $elblue;
   border-bottom: none;
@@ -190,8 +195,13 @@ margin-bottom: 0;
 
 }
 
-.recipe-suggestions {
-  font-size: .8rem;
+// .recipe-suggestions {
+//   font-size: .8rem;
+// }
+
+.recipe-tip p {
+  display: inherit;
+  list-style-type: none;
 }
 
 .recipe-photo img {

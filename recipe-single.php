@@ -92,16 +92,11 @@ if(has_post_thumbnail()){
     </div>
 
 		<div class="the-steps">
-						<h3>Directions</h3>
-
-           
-
-			<?php listSteps() ?>
-
-      
+			<h3>Directions</h3>
+			<?php listSteps() ?>      
       <?php if(get_field('recipe_suggestions')) {
-        echo '<div class="recipe-suggestions">';
-        echo "<h3>Suggestions</h3>";
+        echo '<div class="recipe-tip">';
+        echo '<span class="label">Hot Tip</span>';
         the_field('recipe_suggestions');
         echo "</div>";
       } ?>
